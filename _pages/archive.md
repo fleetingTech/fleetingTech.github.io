@@ -1,10 +1,10 @@
 ---
 permalink: /archive
 layout: page
-title: Blog archive
+title: Archive
 ---
 
-
+<p>All posts sorted by Data.</p>
 <ul>
   {% for post in site.posts %}
     <li>
