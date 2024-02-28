@@ -1,15 +1,16 @@
-title: My blog
-description: My very nice blog
-author: "Jorge Sanz"
+title: "Fleeting Technology"
+description: "Ramblings of a mad man, spiced up with some interesting tidbits.\nIf you have found an issue or would to like to provide additions, feel free to open an issue."
+author: "fleetingTech"
 
 theme: minima
 
-base_url: /gh-pages-minima-starter
-repository: jsanz/gh-pages-minima-starter
+base_url: ""
+repository: fleetingTech/fleetingTech.github.io
+
+
 
 # Minima social links
-github_username: jsanz
-linkedin_username: jsanz
+github_username: fleetingTech
 rss: rss
 
 # Minima: show excerpts in the frontpage
@@ -21,8 +22,14 @@ minima:
 # Minima: custom header links
 header_pages:
   - _pages/frontpage.md
-  - _pages/about.md
+  - _pages/misc.md
+  - _pages/theory.md
+  - _pages/applied.md
+  - _pages/fleeting.md
   - _pages/archive.md
+  - _pages/now.md
+  - _pages/about.md
+
 
 include:
     - _pages
