@@ -3,7 +3,7 @@ title: "Becoming one of the cool kids too..."
 date: 2024-02-28
 layout: post
 category: misc
-tags: [gh-pages, jekyll]
+tags: [site-update, gh-pages, jekyll]
 ---
 
 I was not really happy with my old blog setup. I played around with a bit python and php, even tried to generate xhtml...
