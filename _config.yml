@@ -41,3 +41,6 @@ exclude:
     - Gemfile.lock
     - LICENSE
     - README.md
+  
+plugins:
+  - jemoji
