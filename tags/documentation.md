@@ -1,7 +1,7 @@
 ---
 tag: documentation
 layout: tag
-title: #documentation
+title: documentation
 permalink: /t/documentation
 ---
 Posts for documentation and about documentation.

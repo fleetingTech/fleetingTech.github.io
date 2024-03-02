@@ -1,7 +1,7 @@
 ---
 tag: floating-point
 layout: tag
-title: #floating-point
+title: floating-point
 permalink: /t/floating-point
 ---
 

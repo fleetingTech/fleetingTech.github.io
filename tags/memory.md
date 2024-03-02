@@ -1,7 +1,7 @@
 ---
 tag: memory
 layout: tag
-title: #memory
+title: memory
 permalink: /t/memory
 ---
 Posts regarding all things memory.

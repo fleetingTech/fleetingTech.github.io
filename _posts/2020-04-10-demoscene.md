@@ -4,7 +4,7 @@ subtitle: "Performance is key"
 date: 2020-03-28
 layout: post
 category: misc
-tags: [long-form,procedural,performance, art]
+tags: [long-form,procedural]
 modified_date: 2024-02-28
 ---
 

@@ -21,7 +21,6 @@ minima:
 
 # Minima: custom header links
 header_pages:
-  - _pages/frontpage.md
   - _pages/misc.md
   - _pages/theory.md
   - _pages/applied.md

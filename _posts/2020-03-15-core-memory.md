@@ -4,7 +4,7 @@ subtitle: "Why we core dump and the beginning of SRAM"
 date: 2020-03-15
 layout: post
 category: fleeting
-tags: [long-form,memory,Space]
+tags: [long-form,memory,space]
 modified_date: 2024-02-28
 ---
 

@@ -1,7 +1,7 @@
 ---
 tag: gh-pages
 layout: tag
-title: #gh-pages
+title: gh-pages
 permalink: /t/gh-pages
 ---
 

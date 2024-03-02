@@ -4,7 +4,7 @@ layout: page
 title: Archive
 ---
 
-<p>All posts sorted by Data.</p>
+<p>All posts sorted by Date.</p>
 <ul>
   {% for post in site.posts %}
     <li>

@@ -1,6 +1,6 @@
 ---
 tag: debugging
 layout: tag
-title: #debugging
+title: debugging
 permalink: /t/debugging
 ---

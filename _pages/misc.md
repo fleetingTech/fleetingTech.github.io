@@ -5,4 +5,4 @@ title: Miscellaneous
 menu: misc
 category: misc
 ---
-All posts that dont fit any category really:
+Posts that dont fit any category really:

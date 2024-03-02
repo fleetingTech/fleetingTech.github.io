@@ -1,7 +1,7 @@
 ---
 tag: procedural
 layout: tag
-title: #procedural
+title: procedural
 permalink: /t/procedural
 ---
 

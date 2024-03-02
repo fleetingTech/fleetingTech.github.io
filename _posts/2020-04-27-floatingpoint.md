@@ -8,7 +8,6 @@ tags: [long-form, floating-point]
 modified_date: 2024-02-28
 ---
 Floating point variables are weird.
-
 - Their representation is not intuitve.
 - You need to take special care if you want to compare them.
 - Their exactness reduces with every step away from 0.

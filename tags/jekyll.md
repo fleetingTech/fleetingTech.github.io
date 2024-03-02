@@ -1,7 +1,7 @@
 ---
 tag: jekyll
 layout: tag
-title: #jekyll
+title: jekyll
 permalink: /t/jekyll
 ---
 
