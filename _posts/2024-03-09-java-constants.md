@@ -2,6 +2,7 @@
 title: "Constants in Java"
 subtitle: "public final static String HEADING = \"What about Typesafety?\""
 date: 2024-03-05
+modified_date: 2024-03-10
 layout: post
 category: applied
 tags: [java, longform, oop]
@@ -41,7 +42,7 @@ For example, something like this.
     public class TagBuilder {
         TLV getSender(User sender){return new TLV(TAG_SENDER, sender.getBytes());}
         TLV getRecipient(User recipient){return new TLV(TAG_RECIPIENT, recipient.getBytes());
-        ...
+        //snip
     }
 ```
 
@@ -113,7 +114,7 @@ enum BasicTag implements ITag {
     }
 }
 
-public void someMethod(ITag tag, ...)
+public void someMethod(ITag tag, /*snip*/)
 ```
 Now it is possible to require something that represents a Tag without directly coupling to an implementation while still having the type safety if BasicTag in other places. 
 It also allows for neat enum operations such as operating on (sub) sets of your enums.
@@ -124,7 +125,7 @@ Set<BasicTag> allowedTags = EnumSet.allOf(BasicTag.class);
 if(!allowedTags.contains(t)){
     //some error handling
 }
-...
+//snip
 ```
 
 It is of course also possible to extend the enum with additional values.
@@ -173,12 +174,21 @@ long parseDataLength(ITag tag, ByteBuffer buffer){
 }
 ```
 
-Of course it is possible to achive something similar with inheritance only.
+Of course it is possible to achieve something similar with inheritance only.
 However the enumeration approach provides a few benefits that are not that easily realised without.
 - a 'class' of constants is neatly contained in a single file, (enumerations cant be extended)
 - the usage of enumerations provides a lot of information inherently
 - information about a constant, in our case the byte count of the length field, can be combined with a name
-- alot of glue logic regarding the usage comes with the JRE, like getting the name as declared via name() or a list of all 'constants' in a class can be accessed via EnumSet.allOf().
+- allot of glue logic regarding the usage comes with the JRE, like getting the name as declared via name() or a list of all 'constants' in a class can be accessed via EnumSet.allOf().
 
-[!WARNING]
-This example is very constructed and in actual projects a mixture of multiple techniques and paradigms will give the best results.
+{% include warning.html content="This example is very constructed and in actual projects a mixture of multiple techniques and paradigms will give the best results." %}
+
+
+Also, don't forget about the possibility of varidic funtions in Java!
+```java
+void buildMessage(ByteArrayOutputStream outstream, ITLV... tlvs){
+    for(ITLV tlv in tlvs){
+        tlv.writeTo(outstream)
+    }
+}
+```
