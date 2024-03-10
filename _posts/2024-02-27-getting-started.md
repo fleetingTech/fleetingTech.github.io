@@ -13,7 +13,7 @@ A brief overview of how to get things started quickly and some not so obvious Je
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 
-### Getting Started
+## Getting Started
 The best is to start with a working template, for example, the same that was used for this project, [template](https://github.com/jsanz/gh-pages-minima-starter/). This template also includes a very nice tutorial, [setup](https://jsanz.github.io/gh-pages-minima-starter/2020/03/22/get-code.html).
 
 However a few side notes;
@@ -31,12 +31,12 @@ If you intend to do something with tags, keep the following in mind
 - GitHub Pages comes with fixed plugins if you want Github to take care of building
 - Tag overview pages cant be created programmatically without a plugin
 
-### Not so obvious Markdown and Jekyll features
+## Not so obvious Markdown and Jekyll features
 
 For a complete list of all github flavoured markdown features head to the official [^docs]
 
 Github Pages can be configured among other tools to use kramdown as converter. The docs for this can be found here [^kramdowndocs].
-#### Footnotes
+### Footnotes
 You can use footnotes in conjunction with the markdown parser kramdown. Kramdown is one of default github markdown parsers for gh-pages.
 
 The announcement was in 2021[^footnotes] <== footnote example.
@@ -44,18 +44,18 @@ Some additional resources:
 - [Official Docs: footnotes](https://docs.github.com/en/enterprise-cloud@latest/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#footnotes)
 - Jake Lee has written a nice summary (with edgecases) about the syntax in this [blog post](https://blog.jakelee.co.uk/footnote-experiments-on-github-and-jekyll/).
 
-#### Table of Contents
+### Table of Contents
 To create a toc 2 steps are necessary.
 First use kramdown as markdown converter, for this add 'markdown: kramdown' to your _config.yml file.
 
 Secondly, use something like the following snippet to your posts [kramdown: html#toc](https://kramdown.gettalong.org/converter/html.html#toc):
 ```markdown
-#### Table of Contents
+### Table of Contents
 {:.no_toc}
 * A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
 {:toc}
 ```
-#### Ensure Links open in new Tabs
+### Ensure Links open in new Tabs
 [See this Jeyll discussion](https://talk.jekyllrb.com/t/how-can-i-ensure-my-links-open-in-a-new-tab/4318){:target="_blank"}
 
 Or copy paste this example:
@@ -63,13 +63,37 @@ Or copy paste this example:
 [link text](the link){:target="_blank"}
 ```
 
-#### test
-bla
-{: .block-tip }
+### Github flavoured Markdown
 
-### References
+#### Alerts
+Alert Commands listed in the docs[^alerts] dont work with jekyll. 
+So the following snippet from the docs will not create the nice warning box :cry:.
+```markdown
+[!NOTE]
+Useful information that users should know, even when skimming content.
+```
+To use something similar you have to use some include magic.
+The basic idea that is used goes something like this:
+Create a include statement in your markdown file.
+```markdown
+{% include warning.html content="Useful information that users should know, even when skimming content." %}
+```
 
-[^footnotes]: [https://github.blog/changelog/2021-09-30-footnotes-now-supported-in-markdown-fields/](https://github.blog/changelog/2021-09-30-footnotes-now-supported-in-markdown-fields/)
-[^docs]: [https://docs.github.com/en/enterprise-cloud@latest/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax](https://docs.github.com/en/enterprise-cloud@latest/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-[^kramdowndocs]: [https://kramdown.gettalong.org/converter/html.html](https://kramdown.gettalong.org/converter/html.html)
+In your '_includes' directory create a file named the same, in this case 'warning.html'.
+In this file add something along the lines of:
+```html
+<div markdown="span" style="border-width:0.25em; border-style:solid; border-color:#cbda07; padding: 1em; margin-bottom: 1em;"><b>Warning:</b> :warning: {{include.content}} :warning:</div>
+```
+The `:warning:` statement is the jemoji yntax for :warning:.
+
+Resulting in this:
+{% include warning.html content="Useful information that users should know, even when skimming content." %}
+
+
+## References
+
+[^footnotes]: [https://github.blog/changelog/2021-09-30-footnotes-now-supported-in-markdown-fields/](https://github.blog/changelog/2021-09-30-footnotes-now-supported-in-markdown-fields/){:target="_blank"}
+[^docs]: [https://docs.github.com/en/enterprise-cloud@latest/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax](https://docs.github.com/en/enterprise-cloud@latest/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax){:target="_blank"}
+[^alerts]: [https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts){:target="_blank"}
+[^kramdowndocs]: [https://kramdown.gettalong.org/converter/html.html](https://kramdown.gettalong.org/converter/html.html){:target="_blank"}
 
