@@ -1,5 +1,5 @@
 title: "Fleeting Technology"
-description: "Ramblings of a mad man, spiced up with some interesting tidbits.\nIf you have found an issue or would to like to provide additions, feel free to open an issue."
+description: Ramblings of a mad man, spiced up with some interesting tidbits.\nIf you have found an issue or would to like to provide additions, feel free to open an issue, this is a github page after all!
 author: "fleetingTech"
 
 theme: minima
@@ -18,6 +18,9 @@ show_excerpts: true
 
 minima:
   date_format: "%Y-%m-%d"
+  skin: solarized
+  social_links:
+  - { platform: github,         user_url: "https://github.com/fleetingTech/" }
 
 # Minima: custom header links
 header_pages:
@@ -43,3 +46,7 @@ exclude:
   
 plugins:
   - jemoji
+
+markdown: kramdown
+
+
